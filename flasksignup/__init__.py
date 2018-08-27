@@ -4,6 +4,10 @@ from flask import (
 )
 import os
 import csv
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -25,7 +29,11 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
+
+    @app.route('/', methods = ('GET','POST'))
+    def home():
+        return redirect('/signup')
+
     @app.route('/signup', methods = ('GET','POST'))
     def signup():
         return render_template('signup.html')
@@ -42,7 +50,25 @@ def create_app(test_config=None):
             print(fname,lname,email)
             writer.writerow((fname,lname,email))
 
-        return render_template('signup.html')
+            gmail_user = 'nano.pclub@gmail.com'
+            gmail_password = 'cnse2020'
+            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            server.ehlo()
+            server.login(gmail_user,gmail_password)
+
+            email_html = "Email Html Goes Here"
+
+            msg = MIMEMultipart('alternative')
+            msg['Subject'] = 'Welcome to Programming Club'
+            msg['To'] = email
+            msg['From'] = gmail_user
+
+            part1 = MIMEText(email_html,'html')
+            msg.attach(part1)
+
+            server.send_message(msg)
+
+        return redirect('/signup')
 
 
     return app
