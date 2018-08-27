@@ -1,0 +1,74 @@
+#background{
+  background-color: #BDC3C7;
+}
+
+#logo{
+  max-width:100%;
+  max-height: 100%;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+#signup{
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+  /* vertical-align: middle; */
+}
+
+#submit{
+  margin-left: 50px;
+}
+
+h1{
+  font-weight: bold;
+}
+
+.contents{
+  max-width: 700px;
+  border: 2px solid #BFBFBF;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 8px #6C7A89;
+  background-color: white;
+}
+
+.form-control{
+  height: 40px;
+  font-size: 22px;
+}
+
+.header{
+  height: 150px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.logo-col{
+  display: flex;
+  height: 100%;
+}
+
+.signup-col{
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.form-col{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-lbl{
+  font-size: 2rem
+}
+
+.gold{
+  color: rgba(255, 192, 46);
+}
+
+.blue{
+  color: rgb(0, 44, 115);
+}

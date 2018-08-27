@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for('static',filename='signup.css')}}>
+
+  </head>
+  <body id = "background">
+    <div class="container contents">
+      <div class="row header">
+        <div class="col-lg-12 logo-col">
+          <img src= {{url_for('static',filename='med_logo.png')}} id="logo">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <!-- <div class="col-lg-1"></div> -->
+        <div class="col-lg-12">
+          <h1 class = "blue" id="signup"> <span class = "gold">/* </span> Sign-Up <span class = "gold">*/</span> </h1>
+        </div>
+      </div>
+
+      <form class="" action="/submit" method="post">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 form-col">
+              <label for="fname" class = "blue form-lbl"><span class = "gold">// </span>First Name</label>
+              <input type="text" class = "form-control entry" id = "lname" name="firstname" placeholder="Sean" required>
+            </div>
+            <div class="col-lg-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 form-col">
+              <label for="lname" class = "blue form-lbl"><span class = "gold">// </span>Last Name</label>
+              <input type="text" class = "form-control entry" id = "lname" name="lastname" placeholder="Gibbons" required>
+            </div>
+            <div class="col-lg-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 form-col">
+              <label for="email" class = "blue form-lbl"><span class = "gold">// </span>Email</label>
+              <input type="text" class = "form-control entry" id = "email" name="email" placeholder="sgibbons@sunypoly.edu" required>
+            </div>
+            <div class="col-lg-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8"></div>
+            <div class="col-lg-3">
+              <button type="submit" class = "btn btn-lg" id="submit" name="button">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
