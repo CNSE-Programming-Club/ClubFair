@@ -10,6 +10,7 @@ from email.mime.text import MIMEText
 
 
 def create_app(test_config=None):
+    gmail_password = input('Input Gmail Password\n')
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -51,7 +52,7 @@ def create_app(test_config=None):
             writer.writerow((fname,lname,email))
 
             gmail_user = 'nano.pclub@gmail.com'
-            gmail_password = 'cnse2020'
+
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
             server.ehlo()
             server.login(gmail_user,gmail_password)
