@@ -2,3 +2,4 @@
 *.pyc
 *.csv
 *.csv
+flasksignup/static/info.csv
